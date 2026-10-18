@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CHATinho</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="app">
+            <main id="mensagens" class="mensagens"></main>
+
+            <footer class="rodape">
+                <input id="campoTexto" type="text" placeholder="Escreva sua mensagem..." maxlength="500">
+                <button id="botaoEnviar">Enviar</button>
+            </footer>
+        </div>
+
+        <script>
+            let meuNome = localStorage.getItem("nomeChat");
+            
+            while (!meuNome) {
+                meuNome = prompt("Qual seu nome para o chat?");
+                if (meuNome) localStorage.setItem("nomeChat", meuNome.trim());
+            }
+
+            const divMensagens = document.getElementById("mensagens");
+            const campoTexto = document.getElementById("campoTexto");
+            const botaoEnviar = document.getElementById("botaoEnviar");
+
+            let ultimaQuantidade = -1;
+
+            function renderizarMensagens(lista) {
+                if (lista.length === ultimaQuantidade) return;
+                ultimaQuantidade = lista.length;
+
+                divMensagens.innerHTML = "";
+                lista.forEach(msg => {
+                    const bolha = document.createElement("div");
+                    const ehMinha = msg.usuario === meuNome;
+                    bolha.className = "bolha " + (ehMinha ? "minha" : "outra");
+
+                    const cabecalhoBolha = document.createElement("div");
+                    cabecalhoBolha.className = "cabecalho-bolha";
+
+                    const avatar = document.createElement("span");
+                    avatar.className = "avatar";
+                    avatar.textContent = "◈";
+
+                    const autor = document.createElement("span");
+                    autor.className = "autor";
+                    autor.textContent = ehMinha ? "Você" : msg.usuario;
+
+                    cabecalhoBolha.appendChild(avatar);
+                    cabecalhoBolha.appendChild(autor);
+
+                    const texto = document.createElement("div");
+                    texto.className = "texto";
+                    texto.textContent = msg.texto;
+
+                    bolha.appendChild(cabecalhoBolha);
+                    bolha.appendChild(texto);
+                    divMensagens.appendChild(bolha);
+                });
+
+                divMensagens.scrollTop = divMensagens.scrollHeight;
+            }
+
+            async function buscarMensagens() {
+                try {
+                    const resposta = await fetch("/messages");
+                    const lista = await resposta.json();
+                    renderizarMensagens(lista);
+                } catch (erro) {
+                    console.error("Erro ao buscar mensagens:", erro);
+                }
+            }
+
+            async function enviarMensagem() {
+                const texto = campoTexto.value.trim();
+                if (!texto) return;
+
+                campoTexto.value = "";
+                try {
+                    await fetch("/send", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ usuario: meuNome, texto: texto })
+                    });
+                    ultimaQuantidade = -1;
+                    buscarMensagens();
+                } catch (erro) {
+                    console.error("Erro ao enviar mensagem:", erro);
+                }
+            }
+
+            botaoEnviar.addEventListener("click", enviarMensagem);
+            campoTexto.addEventListener("keydown", (evento) => {
+                if (evento.key === "Enter") enviarMensagem();
+            });
+
+            buscarMensagens();
+            setInterval(buscarMensagens, 1000);
+        </script>
+    </body>
+</html>

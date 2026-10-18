@@ -1,0 +1,489 @@
+┌─ 20:43:02.861  GET /  →  200  (23.0 ms, 4168 B enviados)
+│ Cliente  : 172.26.48.1:54957   MAC 00:15:5d:f7:54:91
+│ Aparelho : Windows NT 10.0 · Firefox 152 · Computador
+│ Host     : localhost:8080
+│ Idioma   : en-US,en;q=0.9
+│
+│ Quadros capturados na rede: 12
+│
+│ ▸ Quadro 1/12  +0.000 ms  cliente → servidor  [eth0]
+│   66 B = 14 (Ethernet) + 20 (IP) + 32 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 52 B
+│                ID 0x9d95 · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x9893
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54957 → 8080 · flags [SYN]
+│                seq 3425070937 (relativo 0) · ack 0 (ignorado: flag ACK desligada)
+│                offset 8 (32 B) · janela 64240 · checksum 0x7dc6 · urgente 0
+│                opções: MSS=1460 NOP WindowScale=8(x256) NOP NOP SACK-permitido 
+│
+│ ▸ Quadro 2/12  +91.367 ms  servidor → cliente  [eth0]
+│   66 B = 14 (Ethernet) + 20 (IP) + 32 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 52 B
+│                ID 0x0000 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x7629
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54957 · flags [ACK,SYN]
+│                seq 3031515779 (relativo 0) · ack 3425070938 (relativo 1)
+│                offset 8 (32 B) · janela 64240 · checksum 0xc4c1 · urgente 0
+│                opções: MSS=1460 NOP NOP SACK-permitido NOP WindowScale=9(x512) 
+│
+│ ▸ Quadro 3/12  +92.162 ms  cliente → servidor  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x9d96 · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x989e
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54957 → 8080 · flags [ACK]
+│                seq 3425070938 (relativo 1) · ack 3031515780 (relativo 1)
+│                offset 5 (20 B) · janela 1026 · checksum 0xbe42 · urgente 0
+│
+│ ▸ Quadro 4/12  +92.236 ms  cliente → servidor  [eth0]
+│   514 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 460 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 500 B
+│                ID 0x9d97 · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x96d1
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54957 → 8080 · flags [ACK,PSH]
+│                seq 3425070938 (relativo 1) · ack 3031515780 (relativo 1)
+│                offset 5 (20 B) · janela 1026 · checksum 0x4829 · urgente 0
+│   CARGA        460 B de requisição HTTP
+│
+│ ▸ Quadro 5/12  +92.903 ms  servidor → cliente  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0xcde7 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0xa84d
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54957 · flags [ACK]
+│                seq 3031515780 (relativo 1) · ack 3425071398 (relativo 461)
+│                offset 5 (20 B) · janela 126 · checksum 0xc4b5 · urgente 0
+│
+│ ▸ Quadro 6/12  +116.967 ms  servidor → cliente  [eth0]
+│   154 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 100 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 140 B
+│                ID 0xcde8 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0xa7e8
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54957 · flags [ACK,PSH]
+│                seq 3031515780 (relativo 1) · ack 3425071398 (relativo 461)
+│                offset 5 (20 B) · janela 126 · checksum 0xc519 · urgente 0
+│   CARGA        100 B de resposta HTTP
+│
+│ ▸ Quadro 7/12  +117.081 ms  servidor → cliente  [eth0]
+│   2974 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 2920 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 2960 B
+│                ID 0xcde9 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x9ce3
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54957 · flags [ACK,PSH]
+│                seq 3031515880 (relativo 101) · ack 3425071398 (relativo 461)
+│                offset 5 (20 B) · janela 126 · checksum 0xd01d · urgente 0
+│   CARGA        2920 B de resposta HTTP
+│
+│ ▸ Quadro 8/12  +117.099 ms  servidor → cliente  [eth0]
+│   1202 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 1148 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 1188 B
+│                ID 0xcdeb · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0xa3cd
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54957 · flags [ACK,PSH,FIN]
+│                seq 3031518800 (relativo 3021) · ack 3425071398 (relativo 461)
+│                offset 5 (20 B) · janela 126 · checksum 0xc931 · urgente 0
+│   CARGA        1148 B de resposta HTTP
+│
+│ ▸ Quadro 9/12  +139.875 ms  cliente → servidor  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x9d98 · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x989c
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54957 → 8080 · flags [ACK]
+│                seq 3425071398 (relativo 461) · ack 3031518800 (relativo 3021)
+│                offset 5 (20 B) · janela 1026 · checksum 0xb0aa · urgente 0
+│
+│ ▸ Quadro 10/12  +139.972 ms  cliente → servidor  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x9d99 · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x989b
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54957 → 8080 · flags [ACK]
+│                seq 3425071398 (relativo 461) · ack 3031519949 (relativo 4170)
+│                offset 5 (20 B) · janela 1022 · checksum 0xac31 · urgente 0
+│
+│ ▸ Quadro 11/12  +139.989 ms  cliente → servidor  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x9d9a · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x989a
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54957 → 8080 · flags [ACK,FIN]
+│                seq 3425071398 (relativo 461) · ack 3031519949 (relativo 4170)
+│                offset 5 (20 B) · janela 1022 · checksum 0xac30 · urgente 0
+│
+│ ▸ Quadro 12/12  +140.005 ms  servidor → cliente  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x0000 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x7635
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54957 · flags [ACK]
+│                seq 3031519949 (relativo 4170) · ack 3425071399 (relativo 462)
+│                offset 5 (20 B) · janela 126 · checksum 0xafb0 · urgente 0
+└──
+
+┌─ 20:43:03.730  GET /style.css  →  200  (16.1 ms, 4772 B enviados)
+│ Cliente  : 172.26.48.1:54959   MAC 00:15:5d:f7:54:91
+│ Aparelho : Windows NT 10.0 · Firefox 152 · Computador
+│ Host     : localhost:8080
+│ Idioma   : en-US,en;q=0.9
+│
+│ Quadros capturados na rede: 11
+│
+│ ▸ Quadro 1/11  +0.000 ms  cliente → servidor  [eth0]
+│   66 B = 14 (Ethernet) + 20 (IP) + 32 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 52 B
+│                ID 0x9d9b · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x988d
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54959 → 8080 · flags [SYN]
+│                seq 2429844319 (relativo 0) · ack 0 (ignorado: flag ACK desligada)
+│                offset 8 (32 B) · janela 64240 · checksum 0xad10 · urgente 0
+│                opções: MSS=1460 NOP WindowScale=8(x256) NOP NOP SACK-permitido 
+│
+│ ▸ Quadro 2/11  +0.095 ms  servidor → cliente  [eth0]
+│   66 B = 14 (Ethernet) + 20 (IP) + 32 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 52 B
+│                ID 0x0000 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x7629
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54959 · flags [ACK,SYN]
+│                seq 2376079668 (relativo 0) · ack 2429844320 (relativo 1)
+│                offset 8 (32 B) · janela 64240 · checksum 0xc4c1 · urgente 0
+│                opções: MSS=1460 NOP NOP SACK-permitido NOP WindowScale=9(x512) 
+│
+│ ▸ Quadro 3/11  +0.882 ms  cliente → servidor  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x9d9c · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x9898
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54959 → 8080 · flags [ACK]
+│                seq 2429844320 (relativo 1) · ack 2376079669 (relativo 1)
+│                offset 5 (20 B) · janela 8212 · checksum 0x21db · urgente 0
+│
+│ ▸ Quadro 4/11  +0.997 ms  cliente → servidor  [eth0]
+│   461 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 407 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 447 B
+│                ID 0x9d9d · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x9700
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54959 → 8080 · flags [ACK,PSH]
+│                seq 2429844320 (relativo 1) · ack 2376079669 (relativo 1)
+│                offset 5 (20 B) · janela 8212 · checksum 0x90b2 · urgente 0
+│   CARGA        407 B de requisição HTTP
+│
+│ ▸ Quadro 5/11  +1.054 ms  servidor → cliente  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0xee02 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x8832
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54959 · flags [ACK]
+│                seq 2376079669 (relativo 1) · ack 2429844727 (relativo 408)
+│                offset 5 (20 B) · janela 126 · checksum 0xc4b5 · urgente 0
+│
+│ ▸ Quadro 6/11  +17.413 ms  servidor → cliente  [eth0]
+│   153 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 99 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 139 B
+│                ID 0xee03 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x87ce
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54959 · flags [ACK,PSH]
+│                seq 2376079669 (relativo 1) · ack 2429844727 (relativo 408)
+│                offset 5 (20 B) · janela 126 · checksum 0xc518 · urgente 0
+│   CARGA        99 B de resposta HTTP
+│
+│ ▸ Quadro 7/11  +17.558 ms  servidor → cliente  [eth0]
+│   4434 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 4380 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 4420 B
+│                ID 0xee04 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x7714
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54959 · flags [ACK,PSH]
+│                seq 2376079768 (relativo 100) · ack 2429844727 (relativo 408)
+│                offset 5 (20 B) · janela 126 · checksum 0xd5d1 · urgente 0
+│   CARGA        4380 B de resposta HTTP
+│
+│ ▸ Quadro 8/11  +17.583 ms  servidor → cliente  [eth0]
+│   347 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 293 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 333 B
+│                ID 0xee07 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x8708
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54959 · flags [ACK,PSH,FIN]
+│                seq 2376084148 (relativo 4480) · ack 2429844727 (relativo 408)
+│                offset 5 (20 B) · janela 126 · checksum 0xc5da · urgente 0
+│   CARGA        293 B de resposta HTTP
+│
+│ ▸ Quadro 9/11  +18.222 ms  cliente → servidor  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x9d9e · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x9896
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54959 → 8080 · flags [ACK]
+│                seq 2429844727 (relativo 408) · ack 2376084442 (relativo 4774)
+│                offset 5 (20 B) · janela 8212 · checksum 0x0d9f · urgente 0
+│
+│ ▸ Quadro 10/11  +19.607 ms  cliente → servidor  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x9d9f · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x9895
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54959 → 8080 · flags [ACK,FIN]
+│                seq 2429844727 (relativo 408) · ack 2376084442 (relativo 4774)
+│                offset 5 (20 B) · janela 8212 · checksum 0x0d9e · urgente 0
+│
+│ ▸ Quadro 11/11  +19.727 ms  servidor → cliente  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x0000 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x7635
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54959 · flags [ACK]
+│                seq 2376084442 (relativo 4774) · ack 2429844728 (relativo 409)
+│                offset 5 (20 B) · janela 126 · checksum 0x2d34 · urgente 0
+└──
+
+┌─ 20:43:05.640  GET /favicon.ico  →  404  (0.2 ms, 64 B enviados)
+│ Cliente  : 172.26.48.1:54962   MAC 00:15:5d:f7:54:91
+│ Aparelho : Windows NT 10.0 · Firefox 152 · Computador
+│ Host     : localhost:8080
+│ Idioma   : en-US,en;q=0.9
+│
+│ Quadros capturados na rede: 10
+│
+│ ▸ Quadro 1/10  +0.000 ms  cliente → servidor  [eth0]
+│   66 B = 14 (Ethernet) + 20 (IP) + 32 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 52 B
+│                ID 0x9da0 · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x9888
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54962 → 8080 · flags [SYN]
+│                seq 3725468037 (relativo 0) · ack 0 (ignorado: flag ACK desligada)
+│                offset 8 (32 B) · janela 64240 · checksum 0xb9ad · urgente 0
+│                opções: MSS=1460 NOP WindowScale=8(x256) NOP NOP SACK-permitido 
+│
+│ ▸ Quadro 2/10  +0.102 ms  servidor → cliente  [eth0]
+│   66 B = 14 (Ethernet) + 20 (IP) + 32 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 52 B
+│                ID 0x0000 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x7629
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54962 · flags [ACK,SYN]
+│                seq 2242053080 (relativo 0) · ack 3725468038 (relativo 1)
+│                offset 8 (32 B) · janela 64240 · checksum 0xc4c1 · urgente 0
+│                opções: MSS=1460 NOP NOP SACK-permitido NOP WindowScale=9(x512) 
+│
+│ ▸ Quadro 3/10  +1.166 ms  cliente → servidor  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x9da1 · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x9893
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54962 → 8080 · flags [ACK]
+│                seq 3725468038 (relativo 1) · ack 2242053081 (relativo 1)
+│                offset 5 (20 B) · janela 1026 · checksum 0x67e3 · urgente 0
+│
+│ ▸ Quadro 4/10  +1.693 ms  cliente → servidor  [eth0]
+│   514 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 460 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 500 B
+│                ID 0x9da2 · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x96c6
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54962 → 8080 · flags [ACK,PSH]
+│                seq 3725468038 (relativo 1) · ack 2242053081 (relativo 1)
+│                offset 5 (20 B) · janela 1026 · checksum 0xb598 · urgente 0
+│   CARGA        460 B de requisição HTTP
+│
+│ ▸ Quadro 5/10  +1.767 ms  servidor → cliente  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0xd627 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0xa00d
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54962 · flags [ACK]
+│                seq 2242053081 (relativo 1) · ack 3725468498 (relativo 461)
+│                offset 5 (20 B) · janela 126 · checksum 0xc4b5 · urgente 0
+│
+│ ▸ Quadro 6/10  +2.377 ms  servidor → cliente  [eth0]
+│   118 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 64 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 104 B
+│                ID 0xd628 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x9fcc
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54962 · flags [ACK,PSH]
+│                seq 2242053081 (relativo 1) · ack 3725468498 (relativo 461)
+│                offset 5 (20 B) · janela 126 · checksum 0xc4f5 · urgente 0
+│   CARGA        64 B de resposta HTTP
+│
+│ ▸ Quadro 7/10  +2.433 ms  servidor → cliente  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0xd629 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0xa00b
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54962 · flags [ACK,FIN]
+│                seq 2242053145 (relativo 65) · ack 3725468498 (relativo 461)
+│                offset 5 (20 B) · janela 126 · checksum 0xc4b5 · urgente 0
+│
+│ ▸ Quadro 8/10  +3.295 ms  cliente → servidor  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x9da3 · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x9891
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54962 → 8080 · flags [ACK]
+│                seq 3725468498 (relativo 461) · ack 2242053146 (relativo 66)
+│                offset 5 (20 B) · janela 1026 · checksum 0x65d6 · urgente 0
+│
+│ ▸ Quadro 9/10  +3.780 ms  cliente → servidor  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x9da4 · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x9890
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54962 → 8080 · flags [ACK,FIN]
+│                seq 3725468498 (relativo 461) · ack 2242053146 (relativo 66)
+│                offset 5 (20 B) · janela 1026 · checksum 0x65d5 · urgente 0
+│
+│ ▸ Quadro 10/10  +3.832 ms  servidor → cliente  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x0000 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x7635
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54962 · flags [ACK]
+│                seq 2242053146 (relativo 66) · ack 3725468499 (relativo 462)
+│                offset 5 (20 B) · janela 126 · checksum 0x6959 · urgente 0
+└──
+
+┌─ 20:43:29.166  POST /send  →  200  (0.2 ms, 120 B enviados)
+│ Cliente  : 172.26.48.1:54988   MAC 00:15:5d:f7:54:91
+│ Aparelho : Windows NT 10.0 · Firefox 152 · Computador
+│ Host     : localhost:8080
+│ Tipo     : application/json (40 bytes)
+│ Idioma   : en-US,en;q=0.9
+│ Corpo    : {"usuario":"Nome","texto":"Saudações"}
+│
+│ Quadros capturados na rede: 10
+│
+│ ▸ Quadro 1/10  +0.000 ms  cliente → servidor  [eth0]
+│   66 B = 14 (Ethernet) + 20 (IP) + 32 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 52 B
+│                ID 0x9dd7 · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x9851
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54988 → 8080 · flags [SYN]
+│                seq 1460234452 (relativo 0) · ack 0 (ignorado: flag ACK desligada)
+│                offset 8 (32 B) · janela 64240 · checksum 0xf949 · urgente 0
+│                opções: MSS=1460 NOP WindowScale=8(x256) NOP NOP SACK-permitido 
+│
+│ ▸ Quadro 2/10  +0.141 ms  servidor → cliente  [eth0]
+│   66 B = 14 (Ethernet) + 20 (IP) + 32 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 52 B
+│                ID 0x0000 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x7629
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54988 · flags [ACK,SYN]
+│                seq 1241074494 (relativo 0) · ack 1460234453 (relativo 1)
+│                offset 8 (32 B) · janela 64240 · checksum 0xc4c1 · urgente 0
+│                opções: MSS=1460 NOP NOP SACK-permitido NOP WindowScale=9(x512) 
+│
+│ ▸ Quadro 3/10  +0.837 ms  cliente → servidor  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x9dd8 · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x985c
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54988 → 8080 · flags [ACK]
+│                seq 1460234453 (relativo 1) · ack 1241074495 (relativo 1)
+│                offset 5 (20 B) · janela 8212 · checksum 0x7fb1 · urgente 0
+│
+│ ▸ Quadro 4/10  +0.899 ms  cliente → servidor  [eth0]
+│   562 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 508 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 548 B
+│                ID 0x9dd9 · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x965f
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54988 → 8080 · flags [ACK,PSH]
+│                seq 1460234453 (relativo 1) · ack 1241074495 (relativo 1)
+│                offset 5 (20 B) · janela 8212 · checksum 0x6817 · urgente 0
+│   CARGA        508 B de requisição HTTP
+│
+│ ▸ Quadro 5/10  +0.917 ms  servidor → cliente  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x1936 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x5cff
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54988 · flags [ACK]
+│                seq 1241074495 (relativo 1) · ack 1460234961 (relativo 509)
+│                offset 5 (20 B) · janela 126 · checksum 0xc4b5 · urgente 0
+│
+│ ▸ Quadro 6/10  +1.305 ms  servidor → cliente  [eth0]
+│   159 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 105 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 145 B
+│                ID 0x1937 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x5c95
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54988 · flags [ACK,PSH]
+│                seq 1241074495 (relativo 1) · ack 1460234961 (relativo 509)
+│                offset 5 (20 B) · janela 126 · checksum 0xc51e · urgente 0
+│   CARGA        105 B de resposta HTTP
+│
+│ ▸ Quadro 7/10  +1.380 ms  servidor → cliente  [eth0]
+│   69 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 15 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 55 B
+│                ID 0x1938 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x5cee
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54988 · flags [ACK,PSH,FIN]
+│                seq 1241074600 (relativo 106) · ack 1460234961 (relativo 509)
+│                offset 5 (20 B) · janela 126 · checksum 0xc4c4 · urgente 0
+│   CARGA        15 B de resposta HTTP
+│
+│ ▸ Quadro 8/10  +1.844 ms  cliente → servidor  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x9dda · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x985a
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54988 → 8080 · flags [ACK]
+│                seq 1460234961 (relativo 509) · ack 1241074616 (relativo 122)
+│                offset 5 (20 B) · janela 8212 · checksum 0x7d3c · urgente 0
+│
+│ ▸ Quadro 9/10  +3.052 ms  cliente → servidor  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:66:de:02 · origem 00:15:5d:f7:54:91 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x9ddb · flags DF · deslocamento 0 · TTL 128 · proto 6 (TCP) · checksum 0x9859
+│                172.26.48.1 → 172.26.60.101
+│   L4 SEGMENTO  porta 54988 → 8080 · flags [ACK,FIN]
+│                seq 1460234961 (relativo 509) · ack 1241074616 (relativo 122)
+│                offset 5 (20 B) · janela 8212 · checksum 0x7d3b · urgente 0
+│
+│ ▸ Quadro 10/10  +3.115 ms  servidor → cliente  [eth0]
+│   54 B = 14 (Ethernet) + 20 (IP) + 20 (TCP) + 0 (carga)
+│   L2 QUADRO    destino 00:15:5d:f7:54:91 · origem 00:15:5d:66:de:02 · tipo 0x0800 (IPv4)
+│   L3 PACOTE    IPv4 · IHL 5 (20 B) · ToS 0x00 (DSCP 0, ECN 0) · tam. total 40 B
+│                ID 0x0000 · flags DF · deslocamento 0 · TTL 64 · proto 6 (TCP) · checksum 0x7635
+│                172.26.60.101 → 172.26.48.1
+│   L4 SEGMENTO  porta 8080 → 54988 · flags [ACK]
+│                seq 1241074616 (relativo 122) · ack 1460234962 (relativo 510)
+│                offset 5 (20 B) · janela 126 · checksum 0x9cd1 · urgente 0
+└──
+

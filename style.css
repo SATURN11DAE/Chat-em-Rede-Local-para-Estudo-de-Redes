@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* Paleta: preto de palco + rosa choque, com um rosa claro para textos sobre o preto */
+:root {
+  --preto: #000000;
+  --carvao: #0d0a0c;
+  --grafite: #1a1418;
+  --rosa: #ff4fa3;
+  --rosa-forte: #ff1f8e;
+  --rosa-claro: #ffc2de;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  background:
+    linear-gradient(115deg, transparent 0 62%, rgba(255, 79, 163, 0.16) 62% 62.4%, transparent 62.4%),
+    radial-gradient(circle at 12% 15%, rgba(255, 31, 142, 0.28), transparent 42%),
+    radial-gradient(circle at 88% 88%, rgba(255, 79, 163, 0.18), transparent 45%),
+    var(--preto);
+  padding: 16px;
+}
+
+.app {
+  width: 420px;
+  max-width: 100%;
+  height: 90vh;
+  max-height: 700px;
+  background: var(--carvao);
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 2px solid var(--rosa);
+  box-shadow:
+    0 0 32px rgba(255, 31, 142, 0.35),
+    0 25px 60px rgba(0, 0, 0, 0.8);
+}
+
+.mensagens {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--preto);
+}
+
+.bolha {
+  max-width: 80%;
+  padding: 9px 13px;
+  border-radius: 14px;
+}
+
+.cabecalho-bolha {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.avatar {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7em;
+  background: var(--preto);
+  color: var(--rosa);
+  flex-shrink: 0;
+}
+
+.autor {
+  font-size: 0.72em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+
+.texto {
+  font-size: 0.9em;
+  line-height: 1.45;
+  word-wrap: break-word;
+  padding-left: 2px;
+}
+
+/* Minhas mensagens: rosa cheio com texto preto, o destaque da tela */
+.bolha.minha {
+  align-self: flex-end;
+  background: var(--rosa);
+  border: 1px solid var(--rosa-claro);
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 6px 18px rgba(255, 31, 142, 0.35);
+}
+
+.bolha.minha .texto {
+  color: var(--preto);
+  font-weight: 500;
+}
+
+.bolha.minha .autor {
+  background: var(--preto);
+  color: var(--rosa);
+}
+
+/* Mensagens dos outros: preto com contorno rosa */
+.bolha.outra {
+  align-self: flex-start;
+  background: var(--grafite);
+  border: 1px solid rgba(255, 79, 163, 0.55);
+  border-bottom-left-radius: 4px;
+}
+
+.bolha.outra .texto {
+  color: var(--rosa-claro);
+}
+
+.bolha.outra .autor {
+  background: rgba(255, 79, 163, 0.16);
+  color: var(--rosa);
+}
+
+.rodape {
+  display: flex;
+  gap: 8px;
+  padding: 12px 14px;
+  background: var(--carvao);
+  border-top: 2px solid var(--rosa);
+  flex-shrink: 0;
+}
+
+#campoTexto {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 79, 163, 0.5);
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88em;
+  background: var(--preto);
+  color: var(--rosa-claro);
+}
+
+#campoTexto::placeholder {
+  color: rgba(255, 194, 222, 0.5);
+}
+
+#campoTexto:focus {
+  border-color: var(--rosa);
+  box-shadow: 0 0 0 3px rgba(255, 79, 163, 0.3);
+}
+
+#botaoEnviar {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 999px;
+  background: var(--rosa);
+  color: var(--preto);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 0.85em;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(255, 31, 142, 0.45);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+#botaoEnviar:hover {
+  background: var(--rosa-claro);
+  transform: translateY(-2px);
+}
+
+#botaoEnviar:active {
+  transform: translateY(0);
+}
+
+#botaoEnviar:focus-visible {
+  outline: 3px solid var(--rosa-claro);
+  outline-offset: 2px;
+}
+
+.mensagens::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mensagens::-webkit-scrollbar-thumb {
+  background: var(--rosa);
+  border-radius: 10px;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .app {
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+  }
+
+  .bolha {
+    max-width: 88%;
+  }
+}
+
+@media (min-width: 900px) {
+  .app {
+    width: 460px;
+    height: 80vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #botaoEnviar {
+    transition: none;
+  }
+}
